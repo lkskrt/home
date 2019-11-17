@@ -1,0 +1,14 @@
+build:
+  image: docker:git
+  script:
+  - 'docker build -t myapp .'
+  - 'docker push myapp'
+
+test:
+  image: myapp
+  script:
+  - 'true'
+
+deploy:
+  script:
+  - ?

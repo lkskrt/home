@@ -1,0 +1,142 @@
+import { vsDark as codeTheme } from '@code-surfer/themes';
+import { CodeSurfer } from 'code-surfer';
+import { Appear, Notes } from 'mdx-deck';
+import TweetEmbed from 'react-tweet-embed';
+
+export const theme = {
+  fonts: {
+    body: 'Roboto, sans-serif',
+    monospace: '"Roboto Mono", monospace',
+  },
+  colors: {
+    text: 'white',
+    background: '#326CE5',
+    primary: '#11306d',
+  },
+  text: {
+    heading: {
+      color: 'white',
+    },
+  },
+};
+
+# Deploying Applications to Kubernetes
+
+## Incloud TechNight
+
+<img src="/images/talks/k8s-deploy/kube-cloud.png" width="200" />
+
+28.11.2019
+
+---
+
+# About Me
+
+- [@lkskrt](https://twitter.com/lkskrt)
+- Senior Developer [@incloudHQ](https://twitter.com/incloudHQ)
+- Web
+  - Infrastructure
+  - Backend
+  - Frontend
+- (other Apps if need be 😏)
+
+<Notes>- Pretty much full stack</Notes>
+
+---
+
+# Is it to complicated?
+
+<TweetEmbed id="1194603542180352000" />
+
+---
+
+# CI/CD
+
+<Notes>
+  - Small survey on CI servers
+  - Anyone still using Jenkins?
+</Notes>
+
+---
+
+<CodeSurfer theme={codeTheme}>
+
+```yaml file="./k8s-deploy/.gitlab-ci.1.1.yaml" title=".gitlab-ci.yml"
+```
+
+```diff 1:5 subtitle="Build and push your image"
+```
+
+```diff 7:10 subtitle="Do some tests 😉"
+```
+
+```diff 12:14 subtitle="Now what?"
+```
+
+```yaml file="./k8s-deploy/.gitlab-ci.1.2.yaml" subtitle="Just use kubectl!"
+```
+
+</CodeSurfer>
+
+<Notes>
+  - What k8s deployment tools do you use?
+</Notes>
+
+---
+
+<CodeSurfer theme={codeTheme}>
+
+```yaml file="./k8s-deploy/deployment.1.1.yaml" title="Most basic version"
+```
+
+```diff subtitle="Spot a problem?"
+```
+
+```diff 19 subtitle="Always implicit latest tag"
+```
+
+```yaml file=./k8s-deploy/deployment.1.2.yaml subtitle="We want to deploy a specific version"
+```
+
+```yaml file=./k8s-deploy/deployment.1.3.yaml subtitle="We need some sort of templating"
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={codeTheme}>
+
+```yaml file="./k8s-deploy/.gitlab-ci.1.2.yaml" title="Adjust .gitlab-ci.yaml"
+```
+
+```yaml 1:10 file="./k8s-deploy/.gitlab-ci.2.1.yaml" subtitle="Tag image"
+```
+
+```diff 12:15 subtitle="Use envsubst to inject env var in yaml"
+```
+
+</CodeSurfer>
+
+---
+
+# Downsides to this approach?
+
+<ul>
+  <Appear>
+    <li>Very basic</li>
+    <li>No conditionals</li>
+    <li>No transforms</li>
+    <li>Not standardized</li>
+    <li>Harder to reuse for other people</li>
+  </Appear>
+</ul>
+
+---
+
+# Helm to the rescue
+
+
+---
+
+# Questions?

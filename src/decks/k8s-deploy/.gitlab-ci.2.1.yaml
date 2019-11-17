@@ -1,0 +1,15 @@
+build:
+  image: docker:git
+  script:
+  - 'docker build -t myapp: .'
+  - 'docker push myapp:$CI_COMMIT_REF_SLUG'
+
+test:
+  image: myapp:$CI_COMMIT_REF_SLUG
+  script:
+  - 'true'
+
+deploy:
+  image: bitnami/kubectl
+  script:
+  - envsubst < deployment.yaml | kubectl apply -f-

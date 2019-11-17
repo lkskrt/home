@@ -1,0 +1,15 @@
+build:
+  image: docker:git
+  script:
+  - 'docker build -t myapp .'
+  - 'docker push myapp'
+
+test:
+  image: myapp
+  script:
+  - 'true'
+
+deploy:
+  image: bitnami/kubectl
+  script:
+  - 'kubectl apply -f deployment.yaml'
