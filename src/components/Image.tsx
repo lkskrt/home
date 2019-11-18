@@ -13,7 +13,7 @@ import Img from 'gatsby-image';
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-export const Image = () => {
+export const Image: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "kube-cloud.png" }) {
@@ -25,8 +25,6 @@ export const Image = () => {
       }
     }
   `);
-
-  console.log(data);
 
   return <Img fixed={data.file.childImageSharp.fixed} />;
 };

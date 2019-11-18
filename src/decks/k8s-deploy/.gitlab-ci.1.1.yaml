@@ -1,8 +1,8 @@
 build:
   image: docker:git
   script:
-  - 'docker build -t myapp .'
-  - 'docker push myapp'
+  - docker build -t myapp .
+  - docker push myapp
 
 test:
   image: myapp

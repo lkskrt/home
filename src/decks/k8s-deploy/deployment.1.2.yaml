@@ -16,6 +16,6 @@ spec:
         runAsUser: 2000
       containers:
       - name: myapp
-        image: "myapp:v0.0.1"
+        image: myapp:v0.0.1
         ports:
         - containerPort: 8080

@@ -23,7 +23,7 @@ const navigation = [
   },
 ];
 
-const getSelectedKeys = (currentPath: string) => {
+const getSelectedKeys = (currentPath: string): string[] => {
   const splitPath = currentPath.split('/');
   if (splitPath.length > 0) {
     return [`/${splitPath[1]}`];
@@ -32,7 +32,10 @@ const getSelectedKeys = (currentPath: string) => {
   return [];
 };
 
-const Container = ({ children, flex = false }) => (
+const Container: React.FC<{ children: React.ReactNode; flex?: boolean }> = ({
+  children,
+  flex = false,
+}) => (
   <Row type="flex" justify="center">
     <Col
       css={css`
@@ -61,32 +64,32 @@ export const Layout: React.FC<IProps> = ({ children }) => (
       `}
     >
       <Container flex>
-      <div
-        css={css`
-          color: white;
-          margin-right: 1.5rem;
-        `}
-      >
-        lkskrt
-      </div>
-      <Location>
-        {({ location }) => (
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            selectedKeys={getSelectedKeys(location.pathname)}
-            css={css`
-              line-height: 64px;
-            `}
-          >
-            {navigation.map(item => (
-              <Menu.Item key={item.path}>
-                <Link to={item.path}>{item.text}</Link>
-              </Menu.Item>
-            ))}
-          </Menu>
-        )}
-      </Location>
+        <div
+          css={css`
+            color: white;
+            margin-right: 1.5rem;
+          `}
+        >
+          lkskrt
+        </div>
+        <Location>
+          {({ location }): React.ReactNode => (
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              selectedKeys={getSelectedKeys(location.pathname)}
+              css={css`
+                line-height: 64px;
+              `}
+            >
+              {navigation.map(item => (
+                <Menu.Item key={item.path}>
+                  <Link to={item.path}>{item.text}</Link>
+                </Menu.Item>
+              ))}
+            </Menu>
+          )}
+        </Location>
       </Container>
     </AntLayout.Header>
 

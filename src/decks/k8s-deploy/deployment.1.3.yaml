@@ -16,6 +16,6 @@ spec:
         runAsUser: 2000
       containers:
       - name: myapp
-        image: "myapp:$CI_COMMIT_REF_SLUG"
+        image: myapp:$CI_COMMIT_REF_SLUG
         ports:
         - containerPort: 8080

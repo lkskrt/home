@@ -1,7 +1,10 @@
 import { vsDark as codeTheme } from '@code-surfer/themes';
+import { Icon } from 'antd';
 import { CodeSurfer } from 'code-surfer';
+import { css } from '@emotion/core';
 import { Appear, Notes } from 'mdx-deck';
-import TweetEmbed from 'react-tweet-embed';
+
+import { PresentationTweet } from '../components/PresentationTweet';
 
 export const theme = {
   fonts: {
@@ -46,7 +49,7 @@ export const theme = {
 
 # Is it to complicated?
 
-<TweetEmbed id="1194603542180352000" />
+<PresentationTweet id="1194603542180352000" />
 
 ---
 
@@ -113,10 +116,25 @@ export const theme = {
 ```yaml 1:10 file="./k8s-deploy/.gitlab-ci.2.1.yaml" subtitle="Tag image"
 ```
 
-```diff 12:15 subtitle="Use envsubst to inject env var in yaml"
+```diff 12:15
+```
+
+```yaml 12:15 file="./k8s-deploy/.gitlab-ci.2.2.yaml" subtitle="Use envsubst to inject env var in yaml"
 ```
 
 </CodeSurfer>
+
+---
+
+# Advantages of this approach?
+
+<ul>
+  <Appear>
+    <li>Super simple</li>
+    <li>Easy to understand</li>
+    <li>envsubst is probably already installed</li>
+  </Appear>
+</ul>
 
 ---
 
@@ -134,8 +152,113 @@ export const theme = {
 
 ---
 
-# Helm to the rescue
+import helmLogo from './k8s-deploy/helm.svg';
 
+# <a href="https://www.helm.sh"><img src={helmLogo} alt="Helm" /></a>
+
+to the rescue
+
+---
+
+<PresentationTweet id="1196049121024577537" />
+
+---
+
+# <img src={helmLogo} alt="Helm" style={{height: '1em'}} />
+
+- Standardizes the way we template YAML files
+  - We call that a *Chart*
+  - Makes it possible to share Charts
+  - Large collection of existing Charts
+  - [hub.helm.sh](https://hub.helm.sh/)
+- Provides us with several options to specify values for a template
+- Uses the Go templating language
+- Communicates with the cluster directly
+
+---
+
+# Who has used Helm `v2`?
+
+---
+
+<CodeSurfer theme={codeTheme}>
+
+```bash 1 title="Creating a chart"
+$ helm create mychart
+
+$ cd mychart
+$ ls -1R
+
+.:
+charts
+Chart.yaml
+templates
+values.yaml
+
+./charts:
+
+./templates:
+deployment.yaml
+_helpers.tpl
+ingress.yaml
+NOTES.txt
+serviceaccount.yaml
+service.yaml
+tests
+
+./templates/tests:
+test-connection.yaml
+```
+
+```diff 3:4
+```
+
+```diff 6:24
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={codeTheme}>
+
+```yaml file="./k8s-deploy/mychart/templates/deployment.yaml" title="templates/deployment.yaml"
+```
+
+```diff 8
+```
+
+```diff 28
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={codeTheme}>
+
+```yaml file="./k8s-deploy/mychart/values.yaml" title="values.yaml"
+```
+
+```diff 5
+```
+
+```diff 7:8
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={codeTheme}>
+
+```yaml file="./k8s-deploy/mychart/Chart.yaml" title="Chart.yaml"
+```
+
+```diff 19:21
+```
+
+</CodeSurfer>
 
 ---
 
