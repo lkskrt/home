@@ -48,10 +48,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run type-check && npm run format-check && gatsby build",
+    "build": "npm run type-check && npm run lint && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
-    "format-check": "prettier --check \"**/*.{ts,tsx,json,md}\"",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
