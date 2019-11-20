@@ -21,8 +21,8 @@ module.exports = {
         name: `lkskrt`,
         short_name: `lkskrt`,
         start_url: `/`,
-        background_color: `#F0F2F5`,
-        theme_color: `#F0F2F5`,
+        background_color: `#001529`,
+        theme_color: `#001529`,
         display: `minimal-ui`,
         // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
