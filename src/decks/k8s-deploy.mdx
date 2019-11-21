@@ -2,7 +2,7 @@ import { vsDark as codeTheme } from '@code-surfer/themes';
 import { Icon } from 'antd';
 import { CodeSurfer } from 'code-surfer';
 import { css } from '@emotion/core';
-import { Appear, Notes } from 'mdx-deck';
+import { Appear, Notes, Image } from 'mdx-deck';
 
 import { PresentationTweet } from '../components/PresentationTweet';
 
@@ -14,7 +14,7 @@ export const theme = {
   colors: {
     text: 'white',
     background: '#326CE5',
-    primary: '#11306d',
+    primary: '#8dabe8',
   },
   text: {
     heading: {
@@ -181,6 +181,12 @@ to the rescue
 
 ---
 
+# <img src={helmLogo} alt="Helm" style={{height: '1em'}} />
+
+- `v3.0.0` just released (2019-11-13)
+
+---
+
 <CodeSurfer theme={codeTheme}>
 
 ```bash 1 title="Creating a chart"
@@ -262,4 +268,30 @@ test-connection.yaml
 
 ---
 
+# Demo
+
+---
+
+# <img src="https://skaffold.dev/images/skaffold-logo-white.png" width="200" />
+
+- https://skaffold.dev
+- `v1.0.0` just released (2019-11-07)
+- Can be used during development, CI and CD
+- Easy way to rebuild and launch applications
+- Can work together with Helm!
+
+---
+
+<img src="https://skaffold.dev/images/architecture.png" stlye="height: 100%;" />
+
+---
+
+# Demo
+
+---
+
 # Questions?
+
+Slides: https://lukas.korte.me/talks/k8s-deploy
+
+Code: https://gitlab.com/lukaskorte/k8s-deploy-demo
