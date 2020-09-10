@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/lkskrt
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://lukas.korte.me
+  * I am lkskrt (https://keybase.io/lkskrt) on keybase.
+  * I have a public key ASBLDV18AmHErkDTwv2HMSXeuVX7G1Y2dGD3LB9uQhZx2Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204b0d5d7c0261c4ae40d3c2fd873125deb955fb1b56367460f72c1f6e421671d90a",
+      "host": "keybase.io",
+      "kid": "01204b0d5d7c0261c4ae40d3c2fd873125deb955fb1b56367460f72c1f6e421671d90a",
+      "uid": "f83671e4461dbe3621f22eb575ffa719",
+      "username": "lkskrt"
+    },
+    "merkle_root": {
+      "ctime": 1599733310,
+      "hash": "27be84894e72663441c3c8abb8dcbecb3714fc7e631d6e96141c27b872bacadebcd683a90b7939572fba0321147f535e6eb166c8c9df5e0a6f1f3dd3f8144f20",
+      "hash_meta": "b5cc26304c43314a71510db2419518d26d75acc02bf11c5b392c3a61b582d1fe",
+      "seqno": 17524697
+    },
+    "service": {
+      "entropy": "HcpXZ5K8x5wcX9jtV6N7XAjR",
+      "hostname": "lukas.korte.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.1"
+  },
+  "ctime": 1599733349,
+  "expire_in": 504576000,
+  "prev": "3eb356faa4b94ecbc1b98803e0e7f262301ba90f849a1e36275ad6f23a2486a6",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgSw1dfAJhxK5A08L9hzEl3rlV+xtWNnRg9ywfbkIWcdkKp3BheWxvYWTESpcCCcQgPrNW+qS5TsvBuYgD4OfyYjAbqQ+Emh42J1rW8jokhqbEIBpcN1u9+4IocMQ/jOqkwFOfURNneLepQs/I1rGIO+4iAgHCo3NpZ8RATMlY79XRBkBLElpS/3xxCqA6rS38G6QDwrpJHh6DlsSyvK3Scw0KCRNMhxkaaTnMOISvtIlA1B+KJ3bOE4mICKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOy/TMwsAdI0JUOLyqVesZhQYkcYpMCR/ettWn1L7Nbwo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/lkskrt
+
+==================================================================
