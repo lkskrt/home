@@ -9,7 +9,7 @@
     "@emotion/styled": "^10.0.23",
     "antd": "^3.25.2",
     "code-surfer": "^3.0.0-beta.1",
-    "gatsby": "^2.17.17",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.2.33",
     "gatsby-plugin-antd": "^2.1.0",
     "gatsby-plugin-emotion": "^4.1.15",
